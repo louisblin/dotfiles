@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 
+echo
 echo "Bootstraping dotfiles..."
+echo
 
 bashit="$HOME/.bash_it"
 aliases_bi="$bashit/aliases/custom.aliases.bash"
 
 me="$HOME/.dotfiles"
 bash_it_custom="$me/bash_it_custom"
-aliases_me="$me/$bash_it_custom/custom.aliases.bash"
+aliases_me="$bash_it_custom/custom.aliases.bash"
 
 pushd . > /dev/null
 
 echo "Installing files..."
-exit 1;
 
 # Install / update bash-it
 if [[ -d $bashit ]]; then
@@ -28,18 +29,23 @@ else
 fi
 
 # Copy custom files in bash-it
+echo
+echo "[BASH-IT] Setting custom files..."
+cd $bash_it_custom
+
 if [[ ! -d $bash_it_custom ]]; then
     echo "Couldn't find custom files... exiting."
     exit 1;
 fi
 
-echo "[BASH-IT] Setting custom files..."
-cd $bash_it_custom
-
 # aliases
 if [[ -f $aliases_bi ]]; then 
-    echo "   * [ALIASES] Found... backing up and creating symlink."
-    cp $aliases_bi "$aliases_bi.bak"
+    echo "   * [ALIASES] File found... backing up and creating symlink."
+    mv $aliases_bi "$aliases_bi".bak
+
+elif [[ -L $aliases_bi ]]; then 
+    echo "   * [ALIASES] Symlink found... backing up and creating symlink."
+    mv $aliases_bi "$aliases_bi".bak
 
 else
     echo "   * [ALIASES] Creating symlink..."
@@ -48,6 +54,6 @@ ln -s $aliases_me $aliases_bi
 
 
 # END
-popd
-
+popd > /dev/null
+echo
 echo "DONE."
