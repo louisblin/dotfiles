@@ -5,12 +5,14 @@ echo "Bootstraping dotfiles..."
 bashit="$HOME/.bash_it"
 aliases_bi="$bashit/aliases/custom.aliases.bash"
 
-bash_it_custom="bash_it_custom"
-aliases_me="$bash_it_custom/custom.aliases.bash"
+me="$HOME/.dotfiles"
+bash_it_custom="$me/bash_it_custom"
+aliases_me="$me/$bash_it_custom/custom.aliases.bash"
 
-pushd .
+pushd . > /dev/null
 
 echo "Installing files..."
+exit 1;
 
 # Install / update bash-it
 if [[ -d $bashit ]]; then
