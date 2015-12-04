@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/louisblin/Google Drive/Imperial/Work/Year2/261 - Labs/wacc_08/bin/antlr'
+let g:netrw_dirhist_2='/Users/louisblin/Google Drive/Imperial/Work/Year2/261 - Labs/wacc_08/antlr'
+let g:netrw_dirhist_3='/Users/louisblin/Google Drive/Imperial/Work/Year2/261 - Labs/wacc_examples/valid'
+let g:netrw_dirhist_4='/Users/louisblin/.bash_sessions'
+let g:netrw_dirhist_5='/Users/louisblin/.bash_it/lib'
