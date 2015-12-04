@@ -12,7 +12,7 @@ me="$HOME/.dotfiles"
 echo
 printf "Updating .dotfiles repository..."
 git pull > /dev/null 2>&1
-echo "Done."
+echo " done."
 
 ############################
 # Install / update bash-it #
@@ -125,11 +125,11 @@ cd $bundle_me > /dev/null
 for bundle in $(ls $bundle_me)
 do
     if [[ -d $bundle/.git ]]; then
-        printf "     Updating bundle $bundle..."
+        printf "     Updating bundle $bundle... "
         cd $bundle > /dev/null
         git pull > /dev/null 2>&1
         cd .. > /dev/null
-        echo "Done."
+        echo "done."
     fi
     
 done
