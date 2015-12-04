@@ -7,6 +7,13 @@ echo -e           "=====================================================\033[0m"
 pushd . > /dev/null
 me="$HOME/.dotfiles"
 
+
+# Update .dotfile repo
+echo
+printf "Updating .dotfiles repository..."
+git pull > /dev/null 2>&1
+echo "Done."
+
 ############################
 # Install / update bash-it #
 ############################
