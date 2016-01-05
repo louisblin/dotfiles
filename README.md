@@ -6,5 +6,5 @@ Very basic dotfiles setup for:
 
 ## Install
 
-git clone --recursive https://github.com/louisblin/dotfiles.git ~/.dotfiles
-bash ~/.dotfiles/bootstrap.bash
+<pre>git clone --recursive https://github.com/louisblin/dotfiles.git ~/.dotfiles</pre>
+<pre>bash ~/.dotfiles/bootstrap.bash</pre>
