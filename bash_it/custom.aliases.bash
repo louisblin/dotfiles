@@ -3,6 +3,7 @@
 ##################################
 
 ### REDEFINED FUNCTIONS
+alias rm='rm -i'
 alias grep='function _grep { grep -rn --color=auto . -e "$1"; }; _grep'
 alias cd='function _cd { cd "$1" && la; }; _cd'
 alias mkd='function _mkd { mkdir "$@" && cd "$@"; }; _mkd'
@@ -27,3 +28,6 @@ alias y='cd ~/Google\ Drive/Imperial/Work/Year2'
 alias wacc='cd ~/Google\ Drive/Imperial/Work/Year2/261\ -\ Labs/wacc_08'
 alias min='export PS1="$ "'
 
+# Public ip, and local ip (without *.*.*.255 netmask) commands
+alias publicip='curl ipecho.net/plain'
+alias localip='ifconfig -a | \grep -o "192.168.[0-9]\+.[0-9]\+" | \grep -v "192.168.*255"'
