@@ -31,3 +31,7 @@ alias min='export PS1="$ "'
 # Public ip, and local ip (without *.*.*.255 netmask) commands
 alias publicip='curl ipecho.net/plain'
 alias localip='ifconfig -a | \grep -o "192.168.[0-9]\+.[0-9]\+" | \grep -v "192.168.*255"'
+
+# ssh
+alias sshlabs='ssh lb3214@shell4.doc.ic.ac.uk'
+alias sshpi='ip=`curl -X GET https://www.doc.ic.ac.uk/~lb3214/pi_ip/?ip_only`; ssh pi@$ip'
