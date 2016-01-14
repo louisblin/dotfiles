@@ -20,6 +20,7 @@ alias clsvis="sh /Applications/ClassVisualizer/clsvis.sh &"
 alias ltsa="open /Applications/ltsatool/ltsa.jar &"
 alias antlr4='java -jar /usr/local/lib/antlr-4.5.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
+alias sicstus="export PATH=${PATH}:/usr/local/sicstus4.3.2/bin > /dev/null; rlwrap sicstus"
 
 ### SHORTCUTS
 alias leds='cd ~/Projects/LEDS/Champylight'
