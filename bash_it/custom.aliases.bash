@@ -20,14 +20,13 @@ alias clsvis="sh /Applications/ClassVisualizer/clsvis.sh &"
 alias ltsa="open /Applications/ltsatool/ltsa.jar &"
 alias antlr4='java -jar /usr/local/lib/antlr-4.5.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
-alias sicstus="export PATH=${PATH}:/usr/local/sicstus4.3.2/bin > /dev/null; rlwrap sicstus"
+alias sicstus="export PATH=${PATH}:/usr/local/sicstus4.3.2/bin > /dev/null; rlwrap sicstus -l ~/.dotfiles/conf.pl"
 
 ### SHORTCUTS
 alias leds='cd ~/Projects/LEDS/Champylight'
 alias api='cd ~/Projects/SelfieHunter/api/serverFiles/SelfieHunter'
 alias y='cd ~/Google\ Drive/Imperial/Work/Year2'
-alias wacc='cd ~/Google\ Drive/Imperial/Work/Year2/261\ -\ Labs/wacc_08'
-alias min='export PS1="$ "'
+alias pintos='cd ~/Google\ Drive/Imperial/Work/Year2/261\ -\ Labs/Pintos/pintos_16'
 
 # Public ip, and local ip (without *.*.*.255 netmask) commands
 alias publicip='curl ipecho.net/plain'
