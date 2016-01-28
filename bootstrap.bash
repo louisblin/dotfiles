@@ -27,7 +27,7 @@ aliases_me="$bash_it_files/custom.aliases.bash"
 
 echo
 echo -e "\033[0;33m=====================================================\033[0m"
-printf "\033[0;33m[BASH-IT]\033[0m "
+printf  "\033[0;33m[BASH-IT]\033[0m "
 
 # Bash it install
 if [[ -d $bashit ]]; then
@@ -137,6 +137,19 @@ done
 popd > /dev/null
 
 ###############################
+
+###############################
+# Install / update ZSH config #
+###############################
+
+echo
+echo -e "\033[0;33m=====================================================\033[0m"
+printf  "\033[0;33m[ZSH]\033[0m "
+
+echo TODO
+
+###############################
+
 popd > /dev/null
 echo
 echo -e "\033[0;33m[DONE]\033[0m"
