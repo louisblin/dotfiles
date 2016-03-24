@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+import glob, os, fnmatch
+
+print('Renaming files indexing them by order of creation...')
+
+files = filter(os.path.isfile, os.listdir(os.getcwd()))
+files.sort(key=lambda x: os.path.getmtime(x))
+
+index = 1
+for file in files:
+  if fnmatch.fnmatch(file, '*?.*'):
+    print "%d - %s" % (index, file)
+    os.rename(file, "%d - %s" % (index, file))
+    index += 1

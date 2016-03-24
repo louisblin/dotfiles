@@ -1,5 +1,8 @@
+###############################################################################
+### OH-MY-ZSH
+
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.dotfiles/zsh/oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
@@ -42,34 +45,37 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew)
-
-# User configuration
-
-  export PATH="/usr/local/maple/bin:/vol/lab/satsolvers/bin:/vol/lab/secondyear/bin:/vol/lab/bin:/vol/lab/bin/Linux/amd64:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/games:/vol/lab/secondyear/bin:/vol/lab/bin:/vol/lab/bin/Linux/x86_64:/vol/lab/satsolvers/bin/"
-# export MANPATH="/usr/local/man:$MANPATH"
+# Plugins from ~/.oh-my-zsh/custom/plugins/
+plugins=(git brew osx rake tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+###############################################################################
+### ADDITIONAL CONFIG
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Import common configuration
+source ~/.dotfiles/common/common_config
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Aliases
+source ~/.dotfiles/zsh/aliases.zsh
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# Import machine local configuration
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
 
-# For a full list of active aliases, run `alias`.
-source $ZSH/../aliases.zsh
+# Only display username if not on laptop
+export DEFAULT_USER=`whoami`
+
+# TODO: To add in config.local on lab machines @Imperial
+#export PATH="/usr/local/maple/bin:/vol/lab/satsolvers/bin:/vol/lab/secondyear/bin:/vol/lab/bin:/vol/lab/bin/Linux/amd64:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/games:/vol/lab/secondyear/bin:/vol/lab/bin:/vol/lab/bin/Linux/x86_64:/vol/lab/satsolvers/bin/"
+
+# TODO: To add in config.local on mac
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PATH="$PYENV_ROOT/bin:$PATH"
+[ -d "$PYENV_ROOT" ] && eval "$(pyenv init -)"
+alias pyenv_install="CFLAGS=-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include pyenv install"
+alias pyenv_venv="eval \"\$(pyenv virtualenv-init -)\""
+

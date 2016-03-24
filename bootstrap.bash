@@ -22,7 +22,7 @@ echo " done."
 bashit="$HOME/.bash_it"
 bash_it_files="$me/bash_it"
 
-aliases_bi="$bashit/aliases/custom.aliases.bash"
+aliases_bi="$bashit/bash/aliases.bash"
 aliases_me="$bash_it_files/custom.aliases.bash"
 
 echo
