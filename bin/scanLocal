@@ -1,8 +1,14 @@
 #!/bin/bash
 
-base_addr="192.168.8."
+base_addr="192.168.1."
 
-for i in {1..255}
+if [[ $# -eq 1 ]]; then
+  base_addr="$1"
+fi
+
+echo "Testing hosts for mask $base_addr{0..255}"
+
+for i in {0..255}
 do 
   (ping -c 1 -t 1 $base_addr$i > /dev/null 2> /dev/null \
   && echo "Addr up : $base_addr$i") & done \
