@@ -6,10 +6,30 @@ if [[ $# -eq 1 ]]; then
   base_addr="$1"
 fi
 
-echo "Testing hosts for mask $base_addr{0..255}"
+echo "Testing hosts for range $base_addr{0..255}"
 
+# Check if host is up, and send back its name if it is
+# $1: the current host id
+function get_description {
+
+  ping -c 1 -t 1 $base_addr$1 > /dev/null 2> /dev/null
+
+  # Return host name if it is up
+  if [[ $? == 0 ]]; then
+    echo `nmap $base_addr$1 | \grep "report" | tail -c +22`
+  else
+    echo "unknown"
+    return 1
+  fi
+}
+
+# Loop through all hosts asynchronously
 for i in {0..255}
-do 
-  (ping -c 1 -t 1 $base_addr$i > /dev/null 2> /dev/null \
-  && echo "Addr up : $base_addr$i") & done \
-  | \grep "Addr"
+do
+  (name=`get_description $i` \
+    && echo "Host is up [$base_addr$i] : $name") &
+done
+
+# Join on child processes
+wait
+
