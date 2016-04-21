@@ -36,14 +36,14 @@ source $BASH_IT/bash_it.sh
 ### ADDITIONAL CONFIG
 
 # Import common configuration
-source ~/.dotfiles/common/common_config
+source $HOME/.dotfiles/common/common_config
 
 # Aliases
-source ~/.dotfiles/bash/aliases.bash
+source $HOME/.dotfiles/bash/aliases.bash
 
 # Import machine local configuration
-if [[ -f ~/.bash_profile.local ]]; then
-  source ~/.bash_profile.local
+if [[ -f $HOME/.bash_profile.local ]]; then
+  source $HOME/.bash_profile.local
 fi
 
 
