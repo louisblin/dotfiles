@@ -1,5 +1,0 @@
-#!/bin/bash
-
-pyenv_venv
-pyenv activate miniconda-latest/envs/algo202
-jupyter notebook >/dev/null 2>&1 &
