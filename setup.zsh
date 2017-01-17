@@ -23,7 +23,7 @@ answer_is_yes() {
 
 ask_for_confirmation() {
     print_question "$1 (y/n) "
-    read -n 1
+    read
     printf "\n"
 }
 
@@ -74,7 +74,7 @@ repo_self_update() {
 
 install_oh_my_zsh() {
 
-    ZSH="${ZSH:-HOME/.oh-my-zsh}"
+    ZSH="${ZSH:-$HOME/.oh-my-zsh}"
     ZSHRC="$DOTFILES/zsh/zshrc"
 
     print_info "====================================================="
@@ -150,3 +150,5 @@ symlink_files
 
 # Back to caller directory
 popd > /dev/null
+
+source ~/.zshrc
