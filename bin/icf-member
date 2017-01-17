@@ -1,0 +1,17 @@
+#!/Users/louisblin/.pyenv/shims/python
+import os
+import argparse
+import requests
+
+parser = argparse.ArgumentParser(description='Lists IC French members')
+
+url = 'https://eactivities.union.ic.ac.uk/API/CSP/307/reports/members?year=16-17'
+headers = {'X-API-Key': '94A32349-B86D-4104-90A1-DEF7BC487FA2'}
+
+r = requests.get(url, headers=headers)
+members = r.json()
+
+for m in members:
+    print("%s %s - %s" % (m["FirstName"], m["Surname"], m["Login"]))
+
+print("Total number of members: " + str(len(r.json())))

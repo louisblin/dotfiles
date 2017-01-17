@@ -1,1 +1,0 @@
-# Defined zsh related aliases

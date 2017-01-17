@@ -1,0 +1,48 @@
+#
+# oh-my-zsh configuration
+#
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/louisblin/.oh-my-zsh
+
+# Choose zsh theme
+ZSH_THEME="agnoster"
+
+# Don't display username in prompt on personal computer
+export DEFAULT_USER=`whoami`
+
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
+
+# Add zsh plugins integrations
+plugins=(git osx zsh-autosuggestions docker thefuck)
+
+source $ZSH/oh-my-zsh.sh
+
+#
+# User configuration
+#
+
+# Import common configuration
+source $HOME/.dotfiles/shell/common_config
+
+# Import machine local configuration
+if [[ -f $HOME/.bash_profile.local ]]; then
+  source $HOME/.bash_profile.local
+fi
+
+#
+# zsh specific config
+#
+
+# Syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Init pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Travis gem
+[ -f /Users/louisblin/.travis/travis.sh ] && source /Users/louisblin/.travis/travis.sh
+
+# the fuck, command typos fixes
+eval "$(thefuck --alias f)"

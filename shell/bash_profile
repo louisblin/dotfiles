@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Import common configuration
+source $HOME/.dotfiles/shell/common_config
+
+# Import machine local configuration
+if [[ -f $HOME/.bash_profile.local ]]; then
+  source $HOME/.bash_profile.local
+fi
+
+#
+# Bash specific config
+#
+
+# Docker
+alias docker_init="eval \"\$(docker-machine env default)\""

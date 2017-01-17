@@ -1,0 +1,15 @@
+[alias]
+	s = status
+	b = branch -a
+	d = diff
+	ds = diff --staged
+	c = checkout
+    cm = checkout master
+    p = push
+
+[user]
+	name = Louis Blin
+	email = louis.blin14@imperial.ac.uk
+
+[push]
+    default = simple

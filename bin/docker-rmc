@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+[[ $# != 1 ]] && echo "usage: $0 <docker image>" && exit 1
+
+echo "Removing Docker containers build from image '$1'"
+
+docker ps -a \
+    --filter "ancestor=$1" \
+    --format "{{.ID}}" \
+    | xargs docker rm

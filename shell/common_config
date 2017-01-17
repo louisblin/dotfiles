@@ -1,18 +1,18 @@
-################
-# COMMON UTILS #
-################
+# Add custom scripts to path
+export PATH=$PATH:~/.dotfiles/bin/
 
-### REDEFINED FUNCTIONS
+# You may need to manually set your language environment
+export LANG=en_GB.UTF-8
+export LC_CTYPE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
+# Redefined functions
 alias rm='rm -i'
 alias mkd='function _mkd { mkdir "$@" && cd "$@"; }; _mkd'
 #alias grep='function _grep { grep -rn --color=auto . -e "$1"; }; _grep'
 #alias cd='function _cd { cd "$1" && la; }; _cd'
 
-# Public ip, and local ip (without *.*.*.255 netmask) commands
+# alias
 alias publicip='curl ipecho.net/plain'
 alias localip='ifconfig -a | \grep -o "192.168.[0-9]\+.[0-9]\+" | \grep -v "192.168.*255"'
-
-# ssh
 alias sshlabs='ssh lb3214@shell4.doc.ic.ac.uk'
-alias sshwa='ssh lb3214@cloud-vm-45-121.doc.ic.ac.uk'
-alias sshpi='ssh pi@llb.ddns.net'
