@@ -27,8 +27,8 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/shell/common_config
 
 # Import machine local configuration
-if [[ -f $HOME/.bash_profile.local ]]; then
-  source $HOME/.bash_profile.local
+if [[ -f $HOME/.zshrc.local ]]; then
+  source $HOME/.zshrc.local
 fi
 
 #
