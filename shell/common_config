@@ -1,5 +1,5 @@
 # Add custom scripts to path
-export PATH=$PATH:~/.dotfiles/bin/
+export PATH=$PATH:~/.dotfiles/bin
 
 # You may need to manually set your language environment
 export LANG=en_GB.UTF-8
@@ -7,6 +7,7 @@ export LC_CTYPE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
 # Redefined functions
+alias c='clear'
 alias rm='rm -i'
 alias mkd='function _mkd { mkdir "$@" && cd "$@"; }; _mkd'
 #alias grep='function _grep { grep -rn --color=auto . -e "$1"; }; _grep'
