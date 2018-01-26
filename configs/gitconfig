@@ -9,10 +9,10 @@
 
 [user]
     name = Louis Blin
-    email = louis.blin14@imperial.ac.uk
+    email = louis-blin@hotmail.fr
 
 [push]
-    default = simple
+    default = matching
 
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
