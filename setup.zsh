@@ -1,12 +1,5 @@
 #!/usr/bin/env zsh
 
-# Symlinks dotfiles to ~/ :
-#    zsh    oh-my-zsh, zshrc
-#    vim    spf13-vim
-#    tmux   tmux.conf
-#    git    gitconfig
-#    bin scripts
-#
 # DISCLAIMER
 #   This is inspired by https://github.com/nicksp/dotfiles/blob/master/setup.sh
 
