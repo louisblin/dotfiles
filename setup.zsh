@@ -67,8 +67,7 @@ print_success() {
 
 repo_self_update() {
     # Updating this repository
-
-    echo git pull > /dev/null 2>&1
+    git pull > /dev/null 2>&1
     print_success "Updated dotfiles repository..."
 }
 
@@ -100,6 +99,7 @@ symlink_files() {
 
     declare -a FILES_TO_SYMLINK=(
         'configs/gitconfig'
+        'configs/gitignore'
         'configs/tmux.conf'
 
         'shell/bash_profile'
