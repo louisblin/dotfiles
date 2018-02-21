@@ -6,6 +6,7 @@
     c = checkout
     cm = checkout master
     p = push
+    flemme = !git add . && git commit -m 'Blin out' && git push
 
 [user]
     name = Louis Blin
