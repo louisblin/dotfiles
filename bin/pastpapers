@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+LOGINS="$HOME/.cate-logins"
+
+[ $# != 1 ] && echo "usage: $0 <course no>" && exit 1
+[ ! -f $LOGINS ] && echo "Missing logins file '$LOGINS'" && exit 1
+
+y=16
+
+while :; do
+    file_out="C$1-$y-$((y+1)).pdf"
+    printf "Downloading $file_out..."
+
+    curl -sf "https://`cat $LOGINS`@exams.doc.ic.ac.uk/pastpapers/papers.$y-$((y+1))/C$1.pdf" -o $file_out
+
+    [ $? != 0 ] && echo "missing" && exit 0
+    echo "done"
+
+    (( y -= 1 ))
+done
