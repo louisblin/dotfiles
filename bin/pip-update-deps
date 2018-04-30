@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-pip list --outdated | awk '{print $1}' | xargs -n1 pip install --upgrade
+# pip list --outdated | awk '{print $1}' | xargs -n1 pip install --upgrade
+pip list --format=freeze --outdated | grep -o "^[^=]\+" | xargs pip install --upgrade

@@ -18,4 +18,4 @@ alias mkvenv='function _mkvenv { python3 -m venv env ; }; _mkvenv && venv'
 # alias
 alias publicip='curl ipecho.net/plain'
 alias localip='ifconfig -a | \grep -o "192.168.[0-9]\+.[0-9]\+" | \grep -v "192.168.*255"'
-alias sshlabs='ssh lb3214@shell4.doc.ic.ac.uk'
+alias sshlabs='ssh -Y lb3214@shell4.doc.ic.ac.uk'
