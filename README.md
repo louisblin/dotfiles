@@ -9,5 +9,5 @@ TODO:
 
 ## Install
 
-<pre>git clone --recursive https://github.com/louisblin/dotfiles.git ~/.dotfiles</pre>
-<pre>~/.dotfiles/setup.zsh</pre>
+<pre>git clone https://github.com/louisblin/dotfiles.git ~/.dotfiles</pre>
+<pre>cd ~/.dotfiles && ./setup.sh</pre>

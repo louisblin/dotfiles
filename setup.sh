@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
 # DISCLAIMER
 #   This is inspired by https://github.com/nicksp/dotfiles/blob/master/setup.sh
@@ -8,6 +8,8 @@
 # Utils
 #
 
+[[ "$1" =~ ^-y*$  ]] && ANSWER_YES=YES || ANSWER_YES=NO 
+
 answer_is_yes() {
     [[ "$REPLY" =~ ^[Yy]$  ]] \
         && return 0 \
@@ -16,8 +18,13 @@ answer_is_yes() {
 
 ask_for_confirmation() {
     print_question "$1 (y/n) "
-    read
-    printf "\n"
+    if [ ${ANSWER_YES} == YES ]; then
+        REPLY="y"
+        printf " y\n"
+    else
+        read
+        printf "\n"
+    fi
 }
 
 execute() {
@@ -144,4 +151,4 @@ symlink_files
 # Back to caller directory
 popd > /dev/null
 
-source ~/.zshrc
+zsh
