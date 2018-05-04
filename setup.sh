@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # DISCLAIMER
 #   This is inspired by https://github.com/nicksp/dotfiles/blob/master/setup.sh
