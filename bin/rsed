@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function usage {
+    echo "usage: $0 pattern replacement [dir]"
+    echo ""
+    echo "Search and replace accross multiple files, or simply recursively in "
+    echo "the current directory."
+}
+
+[[ $1 == "-h" ]] && usage && exit 0
+
+
+for f in `grep -rn . -e "$1" | grep -o "^[^:]*"`
+do
+    echo "File $f"
+    sed -i.bak "s|$1|$2|g" $f
+    rm -f $f.bak
+done

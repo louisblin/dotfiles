@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euo pipefail
+
+git fetch -p
+
+for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do
+    cmd="git branch -D $branch"
+
+    [[ "${1:-}" == "--dry-run" ]] && echo ${cmd} && continue
+
+    eval ${cmd}
+done
+
+exit 0

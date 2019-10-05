@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      # force: true
+
+- clean: ['~']
+
+- link:
+    ~/.bashrc: bashrc 
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
+    ~/.ssh/:
+      glob: true
+      path: ssh/*
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc 
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [~/.dotfiles/install_scripts/oh-my-zsh.zsh, Installing oh-my-zsh]
+  - [~/.dotfiles/install_scripts/tmux.zsh, Installing tmux]
+  - [~/.dotfiles/install_scripts/vim.zsh, Installing vim]

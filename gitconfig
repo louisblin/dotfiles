@@ -5,13 +5,13 @@
     ds = diff --staged
     c = checkout
     cm = checkout master
-    p = push
+    ps = push
+    pl = pull
     flemme = !git add . && git commit -m 'Blin out' && git push
 
 [user]
     name = Louis Blin
     email = louis-blin@hotmail.fr
-    signingkey = 681FE7FF06F7A790
 
 [push]
     default = matching

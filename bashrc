@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Import common configuration
-source $HOME/.dotfiles/shell/common_config
+source $HOME/.dotfiles/shell_common
 
 # Import machine local configuration
-if [[ -f $HOME/.bash_profile.local ]]; then
-  source $HOME/.bash_profile.local
+if [[ -f $HOME/.bashrc.local ]]; then
+  source $HOME/.bashrc.local
 fi
 
 #
