@@ -45,7 +45,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+export ZSH_CUSTOM="$ZSH/custom"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
