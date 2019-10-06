@@ -11,8 +11,6 @@ export LC_ALL="en_US.UTF-8"
 alias c='clear'
 alias rm='rm -i'
 alias mkd='function _mkd { mkdir "$@" && cd "$@"; }; _mkd'
-#alias grep='function _grep { grep -rn --color=auto . -e "$1"; }; _grep'
-#alias cd='function _cd { cd "$1" && la; }; _cd'
 alias venv='source env/bin/activate'
 alias mkvenv='function _mkvenv { python3 -m venv env ; }; _mkvenv && venv'
 

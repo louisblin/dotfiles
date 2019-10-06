@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-for f in $@ ; do
-
-    echo -e "\e[31m>>> $f\e[0m"
-    cat "$f"
-
-done
