@@ -2,12 +2,12 @@
     link:
       create: true
       relink: true
-      # force: true
+      force: true
 
 - clean: ['~']
 
 - link:
-    ~/.bashrc: bashrc 
+    ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.ssh/:
@@ -15,7 +15,7 @@
       path: ssh/*
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
-    ~/.zshrc: zshrc 
+    ~/.zshrc: zshrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
