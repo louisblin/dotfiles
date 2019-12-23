@@ -17,3 +17,4 @@ alias mkvenv='function _mkvenv { python3 -m venv env ; }; _mkvenv && venv'
 # alias
 alias publicip='curl ipecho.net/plain'
 alias localip='ifconfig -a | \grep -o "192.168.[0-9]\+.[0-9]\+" | \grep -v "192.168.*255"'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'

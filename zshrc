@@ -1,4 +1,11 @@
 #
+# Load Nix tools
+#
+
+export NIX_IGNORE_SYMLINK_STORE=1
+[[ -L $HOME/.nix-profile ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
+
+#
 # oh-my-zsh / powerlevel10k configuration
 #
 
@@ -49,7 +56,7 @@ export ZSH_CUSTOM="$ZSH/custom"
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git osx tmux docker)
+plugins=(git osx tmux docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 

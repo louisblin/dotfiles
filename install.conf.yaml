@@ -9,7 +9,7 @@
 - link:
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
-    ~/.gitignore: gitignore
+    ~/.gitignore_global: gitignore_global
     ~/.ssh/:
       glob: true
       path: ssh/*
