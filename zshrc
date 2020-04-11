@@ -1,5 +1,5 @@
 is_rpi() {
-  [[ $(hostname) =~ "k8s*" ]] && return 0 || return 1A
+  [[ $(hostname) =~ "k8s*" ]] && return 0 || return 1
 }
 
 #
