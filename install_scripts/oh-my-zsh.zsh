@@ -1,9 +1,12 @@
 #!/usr/bin/env zsh
 
-INSTALL_DIR=~/.oh-my-zsh
+git_clone_latest() {
+  mkdir -p $(dirname $2)
+  git clone "$1" "$2" || true
+  git -C "$2" fetch
+  git -C "$2" reset --hard origin/master
+}
 
-mkdir -p $(dirname $INSTALL_DIR)
-git clone https://github.com/robbyrussell/oh-my-zsh.git "$INSTALL_DIR" || true
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" || true
-git -C "$INSTALL_DIR" fetch
-git -C "$INSTALL_DIR" reset --hard origin/master
+git_clone_latest https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
+git_clone_latest https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+git_clone_latest https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"

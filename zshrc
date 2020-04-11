@@ -1,3 +1,7 @@
+is_rpi() {
+  [[ $(hostname) =~ "k8s*" ]] && return 0 || return 1A
+}
+
 #
 # Load Nix tools
 #
@@ -11,8 +15,6 @@ export NIX_IGNORE_SYMLINK_STORE=1
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="spaceship-prompt/spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,7 +60,21 @@ export ZSH_CUSTOM="$ZSH/custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git osx tmux docker kubectl)
 
+# Theme, use a slimmer theme on RPI
+if is_rpi; then
+  ZSH_THEME=""
+else
+  ZSH_THEME="spaceship-prompt/spaceship"
+fi
+
 source $ZSH/oh-my-zsh.sh
+
+if is_rpi; then
+  fpath+=$HOME/.zsh/pure
+  autoload -U promptinit
+  promptinit
+  prompt pure
+fi
 
 # User configuration
 
