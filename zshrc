@@ -58,13 +58,14 @@ export ZSH_CUSTOM="$ZSH/custom"
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git osx tmux docker kubectl)
+plugins=(git macos tmux kubectl)
 
 # Theme, use a slimmer theme on RPI
 if is_rpi; then
   ZSH_THEME=""
 else
-  ZSH_THEME="spaceship-prompt/spaceship"
+  #ZSH_THEME="spaceship-prompt/spaceship"
+  ZSH_THEME="agnoster"
 fi
 
 source $ZSH/oh-my-zsh.sh
