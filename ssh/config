@@ -1,3 +1,8 @@
+Host blin.dev
+  HostName blin.dev
+  User root
+  ForwardAgent yes
+
 Host *
   AddKeysToAgent yes
   IgnoreUnknown UseKeychain
@@ -6,5 +11,9 @@ Host *
 
 # https://stackoverflow.com/a/52817036
 Host github.com
-  Hostname ssh.github.com
+  HostName ssh.github.com
   Port 443
+
+Host rpi
+  HostName 192.168.0.20
+  User root
